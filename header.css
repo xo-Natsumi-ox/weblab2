@@ -1,0 +1,115 @@
+.navigation {
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+    margin-left: 240px;
+    margin-right: 240px;
+}
+
+.navigation nav {
+    display: inline;
+}
+
+.half_of_header {
+    display: inline;
+}
+
+.navigation a {
+    font-family: Arial;
+    text-decoration: none;
+    color: #4B5D68;
+    font-size: 16px;
+    margin-left: 40px;
+}
+
+.navigation a:first-child {
+    color: #212353;
+    margin-left: 120px;
+}
+
+.demo_button {
+    float: right;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 5px rgba(75, 93, 104, 0.1);
+    border-radius: 50px;
+    padding: 16px 30px;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+.demo_button:hover {
+    margin-right: 50px;
+    background-color: lawngreen;
+}
+
+.demo_button h3 {
+    display: inline;
+    margin-right: 10px;
+    font-size: 16px;
+    letter-spacing: 0.005em;
+}
+
+@media screen and (min-width: 700px) {
+    .burger {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .navigation {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        padding: 20px;
+        background-color: rgba(240, 99, 184, 0.15);
+        z-index: 1;
+    }
+    .half_of_header img {
+        position: relative;
+        left: 700px;
+        bottom: 40px;
+    }
+    .demo_button {
+        display: none;
+    }
+    .navigation {
+        display: block;
+        margin-left: 0px;
+        width: 1000px;
+    }
+    .navigation_nav {
+        position: fixed;
+        background-color: #e7ecff;
+        left: 0;
+        right: 0;
+        top: 72px;
+        bottom: 0;
+        clip-path: circle(0px at top left);
+        transition: clip-path 1s ease-in;
+    }
+    .navigation_nav.open {
+        clip-path: circle(2000px at top left);
+    }
+    .navigation a {
+        flex-direction: column;
+        display: block;
+        font-size: 62px;
+        padding-top: 200px;
+        text-align: center;
+    }
+    .navigation a:first-child {
+        margin-left: 40px;
+    }
+}
